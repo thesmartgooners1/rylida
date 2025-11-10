@@ -1,9 +1,11 @@
-// Just a simple script to show how JS connects
-console.log("Portfolio site loaded!");
+function moveRandomEl(elm) {
+  elm.style.position = "absolute";
+  elm.style.top = Math.floor(Math.random() * 90 + 5) + "%";
+  elm.style.left = Math.floor(Math.random() * 90 + 5) + "%";
+}
 
-// Example: Alert when clicking on project link
-document.querySelectorAll(".project-card a").forEach(link => {
-  link.addEventListener("click", () => {
-    alert("Opening " + link.textContent + "!");
-  });
+const moveRandom = document.querySelector("#move-random");
+
+moveRandom.addEventListener("mouseenter", function (e) {
+  moveRandomEl(e.target);
 });
